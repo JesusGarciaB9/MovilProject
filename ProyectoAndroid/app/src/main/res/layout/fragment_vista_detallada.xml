@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dia"
+            type="com.example.proyectoandroid.modelos.Dias" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".VistaDetallada">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/place_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:text="@{dia.date}"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="360dp"
+                    android:layout_height="289dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="30dp"
+
+                    android:gravity="center"
+                    android:src="@drawable/giphy"
+                    app:imageResourceUrl="@{dia.url}" />
+
+                <TextView
+                    android:id="@+id/tempemax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:text="@{dia.temp_range}"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/amanecer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:text="@{dia.sunrise_time}"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/atardecer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:text="@{dia.sunset_time}"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/precipitacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:text="@{dia.prob_precip_pct}"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+</layout>

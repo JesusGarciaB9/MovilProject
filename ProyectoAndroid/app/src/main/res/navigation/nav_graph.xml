@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaCiudades">
+
+    <fragment
+        android:id="@+id/listaCiudades"
+        android:name="com.example.proyectoandroid.ListaCiudades"
+        android:label="fragment_lista_ciudades"
+        tools:layout="@layout/fragment_lista_ciudades" >
+        <action
+            android:id="@+id/action_listaCiudades_to_listaDias"
+            app:destination="@id/listaDias" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaDias"
+        android:name="com.example.proyectoandroid.ListaDias"
+        android:label="fragment_lista_dias"
+        tools:layout="@layout/fragment_lista_dias" >
+        <action
+            android:id="@+id/action_listaDias_to_listaCiudades"
+            app:destination="@id/listaCiudades" />
+        <action
+            android:id="@+id/action_listaDias_to_vistaDetallada"
+            app:destination="@id/vistaDetallada" />
+    </fragment>
+    <fragment
+        android:id="@+id/vistaDetallada"
+        android:name="com.example.proyectoandroid.VistaDetallada"
+        android:label="VistaDetallada" >
+        <action
+            android:id="@+id/action_vistaDetallada_to_listaDias"
+            app:destination="@id/listaDias" />
+    </fragment>
+</navigation>
